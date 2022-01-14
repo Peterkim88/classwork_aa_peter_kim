@@ -1,0 +1,22 @@
+git init
+	creates local Git repository
+git status
+	see current changes from last commit
+git log
+	see list of commits
+ls-a
+	see all hidden files within a directory
+git add <file-name>
+	add a specifc file to the staging area
+
+git add.
+	adds all files from the entire working tree
+git commit -m <message>
+	moves updates from staging area
+
+
+
+
+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
+
+SHA256:jvatgXcKqAR6TtE6hsLRlML6OFTvMyvHGy3BXb2r9k0

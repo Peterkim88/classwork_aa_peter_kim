@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Peter Kim Guacamole</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <link rel="stylesheet" href="css_reset.css">
+    <script src="/guacamole_peter_kim/external_javascript_example.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  
+        ga('create', 'UA-12345678-9', 'auto');
+        ga('send', 'pageview');
+  
+    </script>
+</head>
+
+<body>
+    <header>
+        <img id="aa_logo" src="app_academy.png" alt="app academy logo">
+        <nav>
+            <ul>
+                <li><a href="#Description">Description</a></li>
+                <li><a href="#Ingredients">Ingredients</a></li>
+                <li><a href="#Directions">Directions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <aside>
+        <h2 classid="Ingredients">Ingredients</h2>
+        <ul class="ingredient-list">
+            <li>2 ripe avocados</li>
+            <li>1/4 teaspoon salt, plus more to taste</li>
+            <li>1 tablespoon fresh lime or lemon juice</li>
+            <li>2-4 tablespoons minced red onion or thinly sliced green onion</li>
+            <li>1-2 serrano (or jalapeño) chilis, stems and seeds removed, minced</li>
+            <li>2 tablespoons cilantro (leaves and tender stems), finely chopped</li>
+            <li>Pinch freshly ground black pepper</li>
+            <li>1/2 ripe tomato, chopped (optional)</li>
+            <li>Red radish or jicama slices for garnish (optional)</li>
+        </ul>
+        <a href="#aa_logo">back to top</a>
+    </aside>
+
+    <section>
+    <h1 id="Guacamole">Guacamole</h1>
+        <figure>
+            <img src="guacamole pic.png" 
+                alt="picture of bowl of guacamole">
+            <figcaption>
+                <a href="https://en.wikipedia.org/wiki/Guacamole">wikipedia ref</a>
+            </figcaption>
+        </figure>
+        <h2 id="Description">Description</h2>
+        <p>
+            Guacamole is an avocado-based dip, spread, or salad first developed in Mexico.<br> 
+            In addition to its use in modern Mexican cuisine, it has become part of<br>
+            international and American cuisine as a dip, condiment and salad ingredient.</p>
+        <br>
+        <a href="#aa_logo">back to top</a>
+
+        <h2 id="Directions">Directions</h2>
+            <ol>
+                <li>Cut the avocados in half. Remove the pit. Score the inside of the avocado<br>
+                    with a blunt knife and scoop out the flesh with a spoon.<br>
+                </li>
+                <li>Using a fork, roughly mash the avocado.<br>
+                </li>
+                <li>Sprinkle with salt and lime (or lemon) juice. The acid in the lime juice<br>
+                    will provide some balance to the richness of the avocado and will help<br>
+                    delay the avocados from turning brown.<br>
+                </li>
+                <li>Add the chopped onion, cilantro, black pepper, and chilis. Chili peppers<br>
+                    vary individually in their spiciness. So, start with a half of one chili<br>
+                    pepper and add more to the guacamole to your desired degree of heat.<br>
+                </li>
+                <li>Remember that much of this is done to taste because of the variability in<br>
+                    the fresh ingredients. Start with this recipe and adjust to your taste.<br>
+                </li>
+                <li>If making a few hours ahead, place plastic wrap on the surface of the<br>
+                    guacamole and press down to cover it to prevent air reaching it. (The<br>
+                    oxygen in the air causes oxidation which will turn the guacamole brown.)<br>
+                </li>
+                <li>Garnish with slices of red radish or jigama strips. Serve with your choice<br>
+                    of store-bought tortilla chips or make your own homemade tortilla chips.<br>
+                </li>
+            </ol>
+    </section>
+        <a href="#aa_logo">back to top</a><br>
+        <br>
+
+    <section id="review section">
+        <h2>Reviews</h2>
+            <form id="review_form" action="/reviews" method="post">
+
+                <label for="Name">Name</label>
+                    <input type="text" name="name" id="name">
+
+                <label for="Rating">Rating</label>
+                    1<input type="radio" name="rate_scale" id="rating_one">
+                    2<input type="radio" name="rate_scale" id="rating_two">
+                    3<input type="radio" name="rate_scale" id="rating_three">
+                    4<input type="radio" name="rate_scale" id="rating_four">
+                    5<input type="radio" name="rate_scale" id="rating_five">
+
+                <label for="cooking Expertise">Cooking Expertise</label>
+                    <select name="cooking Expertise" id="cooking Expertise">
+                        <option hidden value="">Select Cooking Expertise</option>
+                        <option value="Sometimes Cook">Sometimes Cook</option>
+                        <option value="Cook Everyday">Cook Everyday</option>
+                        <option value="Cooking is a Hobby">Cooking is a Hobby</option>
+                        <option value="Professional Chef">Professional Chef</option>
+                    </select>
+
+                <label for="Review">Review</label>
+                    <textarea name="review" id="review" cols="30" rows="10"></textarea>
+                    <input type="submit" value="Submit Review">
+
+            </form>
+    </section>
+    
+    <footer>
+        <p>
+            Original Recipe by <a href="https://www.simplyrecipes.com/recipes/perfect_guacamole/">Elise Bauer</a>
+        </p>
+    </footer>
+    
+
+</body>
+</html>
