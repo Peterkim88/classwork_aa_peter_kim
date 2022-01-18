@@ -5,6 +5,6 @@ class String
   # example: "cool".symmetric_substrings => ["oo"]
 
   def symmetric_substrings
-    
+
   end
 end
