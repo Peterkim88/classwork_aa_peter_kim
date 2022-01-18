@@ -19,10 +19,12 @@ end
 
 class Manager < Employee
 
-  def initialize(employees)
-    super
-    @employees = employees
+
+  def initialize(name, title, salary, boss)
+    super(name, title, salary, boss)
+    @employees = []
   end
+
 
   #@employees each salaries total * multiplier is the manager's bonus
   #look at each employee and see if they have their own subordinates.
@@ -32,25 +34,41 @@ class Manager < Employee
   #add to the total sum of salaries the salaries of each of the employees
   #multiply the total salaries by the multiplier.
   def bonus(multiplier)
-    # total_salaries = 0
-    # sub_employees = employees.dup
-    # until sub_employees.empty?
-    #   sub_employees.each do |employee|
-    #     sub_employees << employee
-    #   end
-    # end
+    total_salaries = self.flatten_sub_employees
+    total_salaries * multiplier
   end
+
+
 
   def flatten_sub_employees
-    return [] if !employees.is_a?(Manager)
-    employees.each do |employee|
-      
+    total_salaries = 0
+    @employees.each do |sub_emp|
+      if !sub_emp.is_a?(Manager)
+        total_salaries += sub_emp.salary
+      else
+        total_salaries += sub_emp.flatten_sub_employees + sub_emp.salary
+      end
     end
+    total_salaries
   end
 
-  attr_reader :employees
+  attr_accessor :employees
 
 end
+ned = Manager.new('Ned', 'Founder', 1000000, nil)
+darren = Manager.new('Darren', 'TA Manager', 78000, ned)
+david = Employee.new('David', 'TA', 10000, darren)
+shawna = Employee.new('Shawna', 'TA', 12000, darren)
+ned.employees = [darren]
+darren.employees = [david, shawna]
+
+
+
+
+p ned.bonus(5) # => 500_000
+p darren.bonus(4) # => 88_000
+p david.bonus(3) # => 30_000
+
 
 # return [] if employees.employees.nil?
 # emp []   [emp[emp[emp]]]
