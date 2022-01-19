@@ -1,22 +1,9 @@
 require_relative "./piece.rb"
+require_relative "./null_piece.rb"
 
 class Board
 
   attr_accessor :grid
-
-  # def self.add_pieces
-  #   royals = [Piece.new(:rook), Piece.new(:knight), Piece.new(:bishop), Piece.new(:queen), 
-  #             Piece.new(:king), Piece.new(:bishop), Piece.new(:knight), Piece.new(:rook)]
-  #   (0...grid.length).each do |idx|
-  #     if idx == 0 || idx == 7 
-  #       grid[idx] = royals.dup
-  #     elsif idx == 1 || idx == 6
-  #       grid[idx].map! { |pos| pos = Piece.new(:pawn) }
-  #     else
-  #       grid[idx].map! { |pos| pos = Piece.new(:null) }
-  #     end
-  #   end
-  # end
 
   def initialize
     @grid = Array.new(8) { Array.new(8)}
@@ -24,15 +11,19 @@ class Board
   end
 
   def add_pieces
-    royals = [Rook.new, Knight.new, Bishop.new, Queen.new, 
+    royals_white = [Rook.new, Knight.new, Bishop.new, Queen.new, 
+              King.new, Bishop.new, Knight.new, Rook.new]
+    royals_black = [Rook.new, Knight.new, Bishop.new, Queen.new, 
               King.new, Bishop.new, Knight.new, Rook.new]
     (0...@grid.length).each do |idx|
-      if idx == 0 || idx == 7 
-        @grid[idx] = royals.dup
+      if idx == 0
+        @grid[idx] = royals_white
+      elsif idx == 7 
+        @grid[idx] = royals_black
       elsif idx == 1 || idx == 6
-        @grid[idx].map.with_index! { |pos, i| pos = Pawn.new([idx,i]) }
+        @grid[idx].map!.with_index { |pos, i| pos = Pawn.new([idx,i]) }
       else
-        @grid[idx].map.with_index! { |pos, i| pos = Null.new(pos) }
+        @grid[idx].map!.with_index { |pos, i| pos = NullPiece.instance }
       end
     end
   end
