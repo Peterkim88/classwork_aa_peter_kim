@@ -7,10 +7,13 @@ class King < Piece
     def initialize(color, board, pos)
       super
       @move_dirs = [[0, 1], [1, 0], [0, -1], [-1, 0], [1,1], [-1,-1], [-1,1], [1,-1]]
-      @symbol = :king
+      @symbol = ♚ if color == :black
+      @symbol = ♔ if color == :white
     end
-
-    ♔  ♚
   
+    private
+    def move_diffs
+      @move_diffs
+    end
   
 end

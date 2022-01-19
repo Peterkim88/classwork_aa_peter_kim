@@ -8,5 +8,4 @@ class NullPiece < Piece
     @symbol = :null
   end
 
-
 end
