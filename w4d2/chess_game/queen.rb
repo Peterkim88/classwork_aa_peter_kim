@@ -7,5 +7,9 @@ class Queen < Piece
       @move_dirs = [[0, 1], [1, 0], [0, -1], [-1, 0], [1,1], [-1,-1], [-1,1], [1,-1]]
       @symbol = :queen
     end
+
+    def symbol
+        ♕  ♛
+    end
   
 end

@@ -8,8 +8,10 @@ class Piece
   end
 
   def to_s(type)
-    "#{@color} #{self.symbol}"
+    "#{@color} #{self.symbol}"  ### MIGHT SCREW UP
   end
+
+  def 
 
 
   

@@ -1,8 +1,8 @@
 require_relative 'piece'
 
 class Pawn < Piece
-    include Stepable
     
+    attr_reader :symbol
     def initialize(color, board, pos)
       super
       if color == white
@@ -21,5 +21,8 @@ class Pawn < Piece
       @symbol = :pawn
     end
     
+
+    ♙  ♟
+  
   
   end
