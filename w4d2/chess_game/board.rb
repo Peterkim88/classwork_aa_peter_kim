@@ -24,15 +24,15 @@ class Board
   end
 
   def add_pieces
-    royals = [Piece.new(:rook), Piece.new(:knight), Piece.new(:bishop), Piece.new(:queen), 
-              Piece.new(:king), Piece.new(:bishop), Piece.new(:knight), Piece.new(:rook)]
+    royals = [Rook.new, Knight.new, Bishop.new, Queen.new, 
+              King.new, Bishop.new, Knight.new, Rook.new]
     (0...@grid.length).each do |idx|
       if idx == 0 || idx == 7 
         @grid[idx] = royals.dup
       elsif idx == 1 || idx == 6
-        @grid[idx].map! { |pos| pos = Piece.new(:pawn) }
+        @grid[idx].map.with_index! { |pos, i| pos = Pawn.new([idx,i]) }
       else
-        @grid[idx].map! { |pos| pos = Piece.new(:null) }
+        @grid[idx].map.with_index! { |pos, i| pos = Null.new(pos) }
       end
     end
   end

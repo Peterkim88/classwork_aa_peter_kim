@@ -1,7 +1,29 @@
+require_relative 'Board'
 class Piece
 
-  def initialize(type)
-    @type = type
+  def initialize()
   end
   
 end
+
+class Rook < Piece
+end
+
+class Knight < Piece
+end
+
+class Bishop < Piece
+end
+
+class Queen < Piece
+end
+
+class King < Piece
+end
+
+class Pawn < Piece
+end
+
+class NullPiece < Piece
+end
+
