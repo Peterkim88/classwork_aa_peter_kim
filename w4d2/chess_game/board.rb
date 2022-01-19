@@ -10,9 +10,17 @@ class Board
     self.add_pieces
   end
 
+  def make_royals(color)
+
   def add_pieces
-    royals_white = [Rook.new, Knight.new, Bishop.new, Queen.new, 
-              King.new, Bishop.new, Knight.new, Rook.new]
+    make_royals(:white)
+    make_royals(:black)
+    royals_white = [Rook.new,
+                   Knight.new, 
+                   Bishop.new, 
+                   Queen.new, 
+                   King.new, 
+                   Bishop.new, Knight.new, Rook.new]
     royals_black = [Rook.new, Knight.new, Bishop.new, Queen.new, 
               King.new, Bishop.new, Knight.new, Rook.new]
     (0...@grid.length).each do |idx|

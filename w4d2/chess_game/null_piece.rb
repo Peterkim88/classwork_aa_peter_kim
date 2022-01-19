@@ -1,11 +1,12 @@
-require "singleton"
 
-class NullPiece
+class NullPiece < Piece
   include Singleton
 
-  def initialize
+  def initialize(color=nil, board=nil, pos=nil)
+    super
     @color = nil
-    @type = nil
+    @symbol = :null
   end
+
 
 end
