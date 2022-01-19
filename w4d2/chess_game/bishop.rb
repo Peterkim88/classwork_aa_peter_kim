@@ -6,11 +6,15 @@ class Bishop < Piece
 
     def initialize(color, board, pos)
       super
-      @move_dirs = [[1,1], [-1,-1], [-1,1], [1,-1]]
-      @symbol = :bishop
+      @move_dirs = 
+      @symbol = ♗ if color == black
+      @symbol = ♝ if color == white
     end
 
-    ♗  ♝
-  
+     
+    private
+    def move_dirs
+        diagonal_dirs
+    end
   
 end
