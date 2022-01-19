@@ -40,6 +40,14 @@ end
 # PHASE 4
 class BestFriend
   def initialize(name, yrs_known, fav_pastime)
+    if yrs_known < 5
+      # puts "To be real besties, our friendship has to be longer than 5 years"
+      raise ArgumentError.new "To be real besties, our friendship has to be longer than 5 years" 
+    elsif name.length < 1
+      raise ArgumentError.new "Who are you?"
+    elsif fav_pastime.length < 1
+      raise ArgumentError.new "Do block? what you wanna do bro"
+    end
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
