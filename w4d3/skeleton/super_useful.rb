@@ -1,6 +1,13 @@
 # PHASE 2
 def convert_to_int(str)
-  Integer(str)
+  # begin
+    Integer(str) 
+    rescue ArgumentError => e
+      puts "input for number not valid '#{str}'"
+      # puts "must input a valid number like '3' or '5'"
+      # puts "please, reinput number"
+      # gets.chomp.to_i
+    
 end
 
 # PHASE 3
@@ -10,16 +17,24 @@ def reaction(maybe_fruit)
   if FRUITS.include? maybe_fruit
     puts "OMG, thanks so much for the #{maybe_fruit}!"
   else 
-    raise StandardError 
+    raise StandardError.new "#{maybe_fruit} is not a fruit"
   end 
 end
 
 def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
-
-  puts "Feed me a fruit! (Enter the name of a fruit:)"
-  maybe_fruit = gets.chomp
-  reaction(maybe_fruit) 
+  begin
+    puts "Feed me a fruit! (Enter the name of a fruit:)"
+    maybe_fruit = gets.chomp
+    reaction(maybe_fruit) 
+  rescue StandardError => e
+    if maybe_fruit == "coffee"
+      puts "thanks for the #{maybe_fruit}"
+    retry
+    else
+    puts "#{e.message}"
+    end
+  end
 end  
 
 # PHASE 4
