@@ -27,3 +27,28 @@ describe Array do
     end
   end
 end
+
+#two_sum
+
+#1. create a class array
+#2. describe two_sum 
+#3. create variables - one for the original array on Open, a new one with differnt numbers
+#4. each pair to be sorted smaller index before bigger. the array of pairs to be sorted "dictionary-wise":
+
+describe Array do
+  describe "#two_sum" do
+  let(:arr){[-1, 0, 2, -2, 1]}
+  let(:arr2){[3, 2, -2, 0, -1, -3, 1]}
+
+    it "sum of elements at each pair of indicies should equal to 0" do
+      expect(arr.two_sum).to eq([[0,4], [2,3]])
+    end
+    it "the array of pairs to be sorted 'dictionary-wise'" do
+      expect(arr.two_sum).to eq([[0,4], [2,3]])
+      expect(arr2.two_sum).to eq([[0, 5], [1, 2], [4, 6] ])
+    end 
+    
+  end
+end
+
+
