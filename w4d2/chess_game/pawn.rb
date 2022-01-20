@@ -26,9 +26,15 @@ class Pawn < Piece
     end
 
     def side_attacks
-        attack_pos = [ [forward_dir, 1], [forward_dir,-1]]
-        valid_attacks = attack_pos.select do |move|
-            if board[move]
+        attack_pos = [[forward_dir, 1], [forward_dir,-1]].map do |adjust|
+            [(adjust[0] + pos[0]),  (adjust[1] + pos[1]) ]
+        end
+        attack_pos.select do |move|
+            ((0..7).include?(move[0]) && 
+                (0..7).include?(move[1]) &&
+                board[move].color != color && 
+                !board[move].empty?)
+        end
     end
     
 
