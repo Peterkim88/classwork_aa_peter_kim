@@ -44,7 +44,6 @@ describe Array do
       expect(arr.two_sum).to eq([[0,4], [2,3]])
     end
     it "the array of pairs to be sorted 'dictionary-wise'" do
-      expect(arr.two_sum).to eq([[0,4], [2,3]])
       expect(arr2.two_sum).to eq([[0, 5], [1, 2], [4, 6] ])
     end 
     
@@ -68,3 +67,21 @@ describe Array do
     end
   end
 end
+
+
+# 1. describe "#stock_picker" 
+describe "#stock_picker" do
+# 2. create variable prices = [6, 3, 6, 8, 3, 5, 8, 4, 1, 4, 7, 7, 10, 4]
+  let(:stock1) {[6, 3, 6, 8, 3, 5, 8, 4, 1, 4, 7, 7, 10, 4]}
+  let(:stock2) {[10, 7, 1, 7, 4, 4, 6, 5, 4, 3, 6, 3, 8, 8]}
+# 3. it statement "outputs the first most profitable pair of days"
+    it "outputs the first most profitable pair of days" do
+# 4. expect variables.stock_picker => [8, 12] 
+      expect(stock_picker(stock1)).to eq([8, 12])
+    end
+
+    it "profits are only valid when sold after day of purchase" do
+      expect(stock_picker(stock2)).to eq([2, 12])
+    end
+end
+

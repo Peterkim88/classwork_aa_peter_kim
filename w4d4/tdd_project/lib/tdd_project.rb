@@ -49,8 +49,19 @@ class Array
   
 end
 
+def stock_picker(prices)
+  profitable_pair = []
+  profit = 0
+  (0...prices.length-1).each do |idx1|
+    (idx1 + 1...prices.length).each do |idx2|
+      if prices[idx2] - prices[idx1] > profit
+        profit = prices[idx2] - prices[idx1]
+        profitable_pair = [idx1, idx2]
+      end
+    end
+  end
+  profitable_pair
+end
 
 
 
-
-price = [6, 3, 6, 8, 3, 5, 8, 4, 1, 4, 7, 7, 10, 4, 10, 5, 10, 6, 7, 9, 3, 9, 1, 2, 2, 9, 5, 8, 2, 1]
