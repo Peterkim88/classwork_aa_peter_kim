@@ -37,8 +37,8 @@ end
 
 describe Array do
   describe "#two_sum" do
-  let(:arr){[-1, 0, 2, -2, 1]}
-  let(:arr2){[3, 2, -2, 0, -1, -3, 1]}
+  let(:arr) {[-1, 0, 2, -2, 1]}
+  let(:arr2) {[3, 2, -2, 0, -1, -3, 1]}
 
     it "sum of elements at each pair of indicies should equal to 0" do
       expect(arr.two_sum).to eq([[0,4], [2,3]])
@@ -51,4 +51,20 @@ describe Array do
   end
 end
 
-
+# 1. create a class Array
+describe Array do
+# 2. describe my_transpose
+  describe "#my_transpose" do
+# 3. create row variable - rows = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+  let(:arr) {[[0, 1, 2], [3, 4, 5], [6, 7, 8]]}
+# 4. create another row variable - rows2 = [[0, 1],[2, 3]]
+  let(:arr2) {[[0, 1],[2, 3]]}
+# 5. first it - "returns a new 2-d array that converts the row-orientations to column-orientations"
+    it "returns a new 2-d array that converts the row-orientations to column-orientations" do
+# 6. rows => [[0, 3, 6], [1, 4, 7], [2, 5, 8]]
+      expect(arr.my_transpose).to eq([[0, 3, 6], [1, 4, 7], [2, 5, 8]])
+# 7. rows2 => [[0, 2], [1, 3]]
+      expect(arr2.my_transpose).to eq([[0, 2], [1, 3]])
+    end
+  end
+end
