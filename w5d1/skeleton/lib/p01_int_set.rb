@@ -131,18 +131,33 @@ class ResizingIntSet
     end
   end
 
-  # def resize!(*args)
-  #   if @count == num_buckets
-  #     # old = @store.dup 
-  #     @store = @store.concat(Array.new(num_buckets) {[]})
-  #     @count = 0
-  #     @store.each do |bucket|
-  #       bucket.each do |num|
-  #         self.insert(num)
-  #       end
-  #     end
-  #   end
-  # end
+  def resize!(*args)
+    if @count == num_buckets
+      # old = @store.dup 
+      @store = @store.concat(Array.new(num_buckets) {[]})
+      @count = 0
+      @store.each do |bucket|
+        bucket.each do |num|
+          self.insert(num)
+        end
+      end
+    end
+  end
+
+  def resize!(*args)
+    # if @count == num_buckets
+      old_elements = []
+      @store.each do |bucket|
+        bucket.each do |num|
+          old_elements << num
+          self.remove(num)
+        end
+      end
+
+      @store = @store.concat(Array.new(num_buckets) {[]})
+      old_elements.each { |num| self.insert(num) }
+    # end
+  end
 
 
 end
