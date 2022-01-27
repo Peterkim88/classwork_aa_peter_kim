@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Peter Kim - Kimchi Fried Rice</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="kimchi_fried_rice_recipe.css">
+  <script src="kimchi_fried_rice_recipe.js"></script>
+</head>
+
+<header>
+  <img src="https://techjobstour.com/wp-content/uploads/2017/05/appacademylogo.png" alt="app academy logo">
+  <nav>
+    <ul>
+      <li><a href="Description">Description</a></li>
+      <li><a href="Ingredients">Ingredients</a></li>
+      <li><a href="Directions">Directions</a></li>
+    </ul>
+  </nav>
+  <aside>
+    <h2>Ingredients</h2>
+    <ul>
+      <li>3 bowls steamed rice (3 cups)</li>
+      <li>1 cup chopped kimchi</li>
+      <li>¼ cup kimchi juice</li>
+      <li>¼ cup water</li>
+      <li>2-3 tablespoons gochujang</li>
+      <li>3 teaspoons toasted sesame oil</li>
+      <li>1 teaspoon vegetable oil</li>
+      <li>1 green onion, chopped</li>
+      <li>1 tablespoon roasted sesame seeds</li>
+      <li>1 sheet of gim, roasted and shredded</li>
+    </ul>
+  </aside>
+</header>
+
+<body>
+  <h1>Kimchi Fried Rice</h1>
+  <section> 
+    <figure>
+      <img src="https://image8.coupangcdn.com/image/retail/images/59613032810518-db6f0e71-d783-43c2-97f2-06134381684f.jpg" alt="kimchi fried rice">
+    </figure>
+    <figcaption><a href="http://en.wikipedia.org/wiki/Kimchi_fried_rice">The history of Kimchi Fried Rice</a></figcaption>
+    <h2>Description</h2>
+    <p>This simple, simple dish is super, super tasty. It’s just a few ingredients(including kimchi), but it’s a dish much loved by Koreans.</p>
+    <h2>Directions</h2>
+    <ol>
+      <li>Heat up a pan. Add the vegetable oil.</li>
+      <li>Add the kimchi and stir fry for 1 minute.</li>
+      <li>Add rice, kimchi juice, water, and gochujang. Stir all the<br> 
+        ingredients together for about 7 minutes with a wooden spoon.</li>
+      <li>Add sesame oil and remove from the heat.</li>
+      <li>Sprinkle with chopped green onion, roasted gim, and sesame<br>
+        seeds. Serve right away.</li>
+      <li>Fry an egg and place on top with shredded seaweed as a bonus.</li>
+    </ol>
+  </section>
+
+  <section id="reviews">
+    <form action="review" id="review-form">
+      <label for="name" id="reviewer_name">Name
+        <input type="text" name="name" id="reviewer_name">
+      </label>
+      <label for="Rating">Rating
+        1<input type="radio" name="Rating" id="rating1" checked>
+        2<input type="radio" name="Rating" id="rating2">
+        3<input type="radio" name="Rating" id="rating3">
+        4<input type="radio" name="Rating" id="rating4">
+        5<input type="radio" name="Rating" id="rating5">
+      </label>
+      <label for="Expertise">Cooking Expertise
+        <select name="Expertise" id="Expertise">
+          <option value="Expertise" disabled selected>Select Cooking Expertise</option>
+          <option value="Expertise">Sometimes Cook</option>
+          <option value="Expertise">Cook Everyday</option>
+          <option value="Expertise">Cooking is a Hobby</option>
+          <option value="Expertise">Professional Chef</option>
+        </select>
+      </label>
+      <label for="reviewText">Review
+        <textarea name="reviewText" id="reviewText" cols="30" rows="10"></textarea>
+      </label>
+      <button>Submit Review</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Original Recipe by <a href="http://www.maangchi.com/recipe/kimchi-bokkeumbap">Maangchi</a></p>
+  </footer>
+  
+</body>
+</html>

@@ -16,13 +16,23 @@ class Board
     make_royals(:white)
     make_royals(:black)
     royals_white = [Rook.new,
-                   Knight.new, 
-                   Bishop.new, 
-                   Queen.new, 
-                   King.new, 
-                   Bishop.new, Knight.new, Rook.new]
-    royals_black = [Rook.new, Knight.new, Bishop.new, Queen.new, 
-              King.new, Bishop.new, Knight.new, Rook.new]
+                    Knight.new, 
+                    Bishop.new, 
+                    Queen.new, 
+                    King.new, 
+                    Bishop.new, 
+                    Knight.new, 
+                    Rook.new]
+                  
+    royals_black = [Rook.new, 
+                    Knight.new, 
+                    Bishop.new, 
+                    Queen.new, 
+                    King.new, 
+                    Bishop.new, 
+                    Knight.new, 
+                    Rook.new]
+                  
     (0...@grid.length).each do |idx|
       if idx == 0
         @grid[idx] = royals_white
