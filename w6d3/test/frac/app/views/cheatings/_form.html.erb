@@ -1,0 +1,17 @@
+<%= form_with(model: cheating, local: true) do |form| %>
+  <% if cheating.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cheating.errors.count, "error") %> prohibited this cheating from being saved:</h2>
+
+      <ul>
+      <% cheating.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

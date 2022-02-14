@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cheatings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cheatings.each do |cheating| %>
+      <tr>
+        <td><%= link_to 'Show', cheating %></td>
+        <td><%= link_to 'Edit', edit_cheating_path(cheating) %></td>
+        <td><%= link_to 'Destroy', cheating, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cheating', new_cheating_path %>

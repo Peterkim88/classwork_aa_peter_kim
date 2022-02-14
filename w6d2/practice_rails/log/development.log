@@ -1,0 +1,11 @@
+  [1m[35m (464.4ms)[0m  [1m[35mCREATE DATABASE "practice_rails_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (328.4ms)[0m  [1m[35mCREATE DATABASE "practice_rails_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2022-02-03 05:02:06 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/peterkim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/peterkim/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.5ms)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+

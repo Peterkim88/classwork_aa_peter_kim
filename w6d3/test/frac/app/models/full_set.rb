@@ -1,0 +1,2 @@
+class FullSet < ApplicationRecord
+end

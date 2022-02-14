@@ -1,0 +1,2 @@
+class Cheating < ApplicationRecord
+end

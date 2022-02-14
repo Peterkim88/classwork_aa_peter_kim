@@ -1,0 +1,21 @@
+<table>
+    <thead>
+        <tr>
+            <th colspan="5">All of the Cats to Rent</th>
+        </tr>
+        <tr>
+          <th colspan="1">Name</th>
+          <th colspan="1">Birth Date</th>
+          <th colspan="1">Color</th>
+          <th colspan="1">Sex</th>
+          <th colspan="1">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @cats.each do |cat| %>
+          <tr>
+            <%= render 'cat', cat: cat, action: :index %>
+          </tr>
+        <% end %>
+    </tbody>
+</table>
