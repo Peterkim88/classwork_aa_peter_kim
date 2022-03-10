@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   console.log("DOM Content has been loaded");
 
   // const root = document.querySelector('#root');
-  const root = document.getElementById('#root');
+  const root = document.getElementById('min');
 	ReactDOM.render(< Root />, root);
 })
