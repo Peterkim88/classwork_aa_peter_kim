@@ -5,6 +5,10 @@ class Store {
     this.getState = this.getState.bind(this);
   }
 
+  dispatch(action){
+    this.state = this.rootReducer(this.state, action);
+  }
+
   getState(){
     return Object.assign({}, this.state);
   }
@@ -12,11 +16,11 @@ class Store {
 
 const createStore = (...args) => new Store(...args);
 
-const combineReducers = props => {
+const combineReducers = reducers => {
   return (prevState, action) => {
     const nextState = {};
-    Object.keys(props).forEach((k) => {
-      nextState[k] = props[k](prevState, action);
+    Object.keys(reducers).forEach((k) => {
+      nextState[k] = reducers[k](prevState, action);
     });
     return nextState;
   }
