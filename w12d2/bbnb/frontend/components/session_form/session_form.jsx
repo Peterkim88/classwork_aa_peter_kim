@@ -1,7 +1,7 @@
 import React from 'react';
 
 class SessionForm extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       username: '',
@@ -10,19 +10,19 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  update(field){
+  update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
   }
 
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
 
-  renderErrors(){
+  renderErrors() {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -34,33 +34,33 @@ class SessionForm extends React.Component {
     );
   }
 
-  render(){
+  render() {
     return (
-      <div className='login-form-container'>
-        <form onSubmit={this.handleSubmit} className='login-form-box'>
-          Welcome to Bench BNB!
-          <br />
+      <div className="login-form-container">
+        <form onSubmit={this.handleSubmit} className="login-form-box">
+          Welcome to BenchBnB!
+          <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className='login-form'>
-            <br />
+          <div className="login-form">
+            <br/>
             <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
-                className='login-input'
+                className="login-input"
               />
             </label>
-            <br />
+            <br/>
             <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                className='login-input'
+                className="login-input"
               />
             </label>
-            <br />
-            <input className='session-submit' type="submit" value={this.props.formType} />
+            <br/>
+            <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
       </div>
